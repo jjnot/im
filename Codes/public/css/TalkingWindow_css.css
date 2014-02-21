@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+    width:100%;
+    padding:0px;
+    margin:0px;
+}
+
+.oneSession{
+    height: auto;
+    width: 100%;
+    margin-top: 5px;
+    float: left;
+}
+.headPhotoforTalking{
+    float: left;
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+}
+
+.bubbleWord{
+    float: left;
+    width: auto;
+    max-width: 65%;
+    height: auto;
+    line-height: 30px;
+    font-size: 22px;
+    padding: 15px 20px 15px 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    background: powderblue;
+
+
+}
+
+.headTd{
+    width:100px;
+    float: left;
+}
+
+
+
+.bubbleSan{
+    margin-top: 35px;
+    float: left;
+    width:0;
+    height:0;
+    border-width:10px 10px;
+    border-style:solid;
+    border-color:#ffffff powderblue #ffffff #ffffff;
+}
+
+.wordInput{
+    float: left;
+    width: 65%;
+    margin-left: 5%;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.sendButton{
+    float: left;
+    width: 20%;
+    margin-left: 5%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+#buttomBlank{
+    height: 200px;
+    width: 100%;
+}
+
+.talkingWindowHeader{
+    border-radius: 10px 10px 0 0;
+    display: block;
+    height: 80px;
+    width: 100%;
+    border-bottom: #e6e7e4 2px solid;
+    background-color: #f8f8f8;
+}
+

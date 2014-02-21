@@ -1,0 +1,219 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+    width:100%;
+    padding:0px;
+    margin:0px;
+
+}
+
+.friendListHeader{
+    border-radius: 10px 10px 0 0;
+    display: block;
+    height: 40px;
+    width: 100%;
+    border-bottom: #e6e7e4 2px solid;
+    background-color: #f8f8f8;
+}
+
+
+.ListContent{
+    display: block;
+    height: 600px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.friendListBody{
+    position: relative;
+    display: inline-block;
+    width: 350px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    left: 0;
+    top:0
+    
+}
+
+.friendListNav{
+    border-radius: 0 0 10px 10px ;
+    display: block;
+    height: 60px;
+    background: #f8f8f8;
+    border-top: #e6e7e4 2px solid;
+}
+
+
+.OneList{
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.headPhoto{
+    float: left;
+    height: 60px;
+    width: 60px;
+    padding: 5px;
+    margin-left: 5px;
+
+}
+
+.OneList h1{
+    float: left;
+    width: auto;
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+
+}
+
+.OneList h2{
+    float: right;
+    width: 80px;
+    font-size: 15px;
+    font-weight: 100;
+    color: #8b8e91;;
+    margin-top: 20px;
+}
+
+
+.alertNumber{
+    background: lightcoral;
+    display: block;
+    height: 24px;
+    width: 24px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 23px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+
+}
+
+.deleteIcon{
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-image: url("../image/deleteIcon.png");
+    float: right;
+    margin-right: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#scrollBroad{
+    width: 1400px;
+    height: 100%;
+    display: block;
+    position: relative;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+
+
+.friendListBody h3{
+    font-size: 20px;
+    font-weight: 400;
+    display: block;
+    color: #606060;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.friendListBody h4{
+    font-size: 20px;
+    font-weight: 400;
+    display: block;
+    color: powderblue;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.settingInput{
+    text-align: center;
+    display: block;
+    width: 320px;
+    margin:auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    height: 30px;
+    outline: none;
+}
+
+.saveButton{
+    height: 30px;
+    width: 95%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.OneList .specialLable{
+    color: powderblue;
+}
+
+
+
+.emailHidden{
+    display: none;
+}
+.sign{
+    display: none;
+}
+
+
+#closeIcon{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    height: 30px;
+    width: 30px;
+    background-image: url(../image/closeIcon.png) ;
+    cursor: pointer;
+}
+
+
+
+#shadow{
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.6);
+
+}
+
+.friendListBody input[type="file"]{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+
+#headCanvas{
+    height: auto;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: solid 4px #ffffff;
+    display: block;
+}
+
+

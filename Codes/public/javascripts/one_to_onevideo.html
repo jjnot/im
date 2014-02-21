@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="keywords" content="JavaScript, WebRTC" />
+    <meta name="description" content="WebRTC codelab" />
+    <script src='/socket.io/socket.io.js'></script>
+    <title></title>
+</head>
+<body>
+<video id="localVideo" autoplay ></video>
+<span id="remoteVideoSpan"></span>
+
+<div>
+    <h1>input your name</h1>
+    <input id="userName" type="text"></input><br/>
+    <h2>enter receiver name</h2>
+    <input id="receiverName" type="text"></div><br/>
+    <button id="getCamera">getCamera</button>
+    <button id="callButton">Call</button>
+</div>
+
+<script>
+
+var qvgaConstraints  = {
+  video: {
+    mandatory: {
+      maxWidth: 320,
+      maxHeight: 180
+    }
+  },audio:true
+};
+	
+    var socket = io.connect();
+    var localStream;
+  
+    var localVideo = document.getElementById("localVideo");
+    var remoteVideoSpan = document.getElementById("remoteVideoSpan");
+    var callButton=document.getElementById("callButton");
+    var getCameraButton=document.getElementById('getCamera');
+    var pc_config=null;
+    var userName;
+	var peerconnection;
+	var yourname;
+	
+
+
+    //getCameraButton.onclick=function(e){
+        //获取用户摄像头
+        //doGetUserMedia();
+   // }
+function errorCallback(e){alert(e);}
+
+   
+callButton.onclick=calldirectly;
+		
+		
+function calldirectly(e){
+		userName=document.getElementById('userName').value;
+		yourname=document.getElementById('receiverName').value;
+		
+		socket.emit('video',{fromemail:userName,toemail:yourname},function(answer){
+			if(answer)
+				doGetUserMedia(onUserMediaSuccess_bycaller);
+			})
+		
+	}
+
+		
+function doGetUserMedia(success){
+		userName=document.getElementById('userName').value;
+        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+        var constraints ={ audio: true, video: true };
+        navigator.getUserMedia(qvgaConstraints, success, errorCallback);
+    }
+
+
+socket.on('video',function(evt){
+		var fromemail=evt.fromemail;
+		var toemail=evt.toemail;
+		doGetUserMedia(onUserMediaSuccess_bycalled);
+	})
+	
+function onUserMediaSuccess_bycalled(stream){
+	 	localVideo.src = window.webkitURL.createObjectURL(stream);
+        localVideo.style.opacity = 1;
+        localStream = stream;
+		peerconnection=new webkitRTCPeerConnection(null);
+		peerconnection.onicecandidate=function(){
+			 if (event.candidate) {
+            	socket.emit('candidate', {type: 'candidate',
+                label: event.candidate.sdpMLineIndex,
+                id: event.candidate.sdpMid,
+                candidate: event.candidate.candidate,
+                fromemail:userName,
+				toemail:yourname});
+			}
+			else
+				console.log('NO Candidate');
+			
+			};
+		peerconnection.onaddstream=onRemoteStreamAdded;
+		peerconnection.addStream(localStream);	
+	
+	
+	}	
+function onUserMediaSuccess_bycaller(stream){
+        localVideo.src = window.webkitURL.createObjectURL(stream);
+        localVideo.style.opacity = 1;
+        localStream = stream;
+		
+		peerconnection=new webkitRTCPeerConnection(null);
+		peerconnection.onicecandidate=function(){
+			 if (event.candidate) {
+            	socket.emit('candidate', {type: 'candidate',
+                label: event.candidate.sdpMLineIndex,
+                id: event.candidate.sdpMid,
+                candidate: event.candidate.candidate,
+                fromemail:userName,
+				toemail:yourname});
+			}
+			else
+				console.log('NO Candidate');
+			
+			};
+		
+		peerconnection.onnegotiationneeded=function() {
+			peerconnection.createOffer(function(sessionDescription){
+				
+				peerconnection.setLocalDescription(sessionDescription);
+				socket.emit('sdpfromoffer',{sdp:sessionDescription,fromemail:userName,toemail:youname});
+				
+				 
+				})
+			}
+
+		peerconnection.onaddstream=onRemoteStreamAdded;
+		peerconnection.addStream(localStream);
+    };
+	    
+		
+	
+		
+	
+
+   
+	
+	
+socket.on('sdpfromoffer',function(msg){
+		//该信息只有一个人发送的,emit('sdpfromoffer')
+		console.log("recieve the offer from"+msg.fromemail+' to '+msg.toemail);
+		peerconnection.setRemoteDescription(new RTCSessionDescription(msg.sdp));
+		//pc[msg.userName].createAnswer(setLocalAndSendMessage);
+		peerconnection.createAnswer(function(sessionDescription){
+		peerconnection.setLocalDescription(sessionDescription);
+		socket.emit('sdpfromanswer',{sdp:sessionDescription,fromemail:userName,toemail:yourname});
+		})
+	})
+		
+		
+		
+socket.on('sdpfromanswer',function(msg){
+		console.log('the answer from '+msg.toemail);
+		peerconnection.setRemoteDescription(new RTCSessionDescription(msg.sdp));
+	})
+
+
+  
+ function onRemoteStreamAdded(evt){
+	    if ((evt.stream).getVideoTracks().length > 0) {
+    console.log('Using video device: ' + evt.stream.getVideoTracks()[0].label);
+  }
+        console.log("addstreammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm");
+		
+		
+        var newVideo=document.createElement("video");
+        remoteVideoSpan.appendChild(newVideo);
+        newVideo.autoplay=true;
+		newVideo.id="VIDEO"+testNum;
+		testNum++;
+		newVideo.setAttribute("display","block");
+		newVideo.height=300;
+		newVideo.width=300;
+        newVideo.src= URL.createObjectURL(evt.stream);
+      }
+
+
+
+
+socket.on('candidate', function (message){
+		var newUser=message.fromemail;
+		var tousername=message.toemail;
+		console.log('recieve the candidate from '+newUser);
+		var candidate = new RTCIceCandidate({sdpMLineIndex:msg.label,
+            candidate:msg.candidate});
+		peerconnection.addIceCandidate(candidate);
+		
+	 });
+
+
+
+
+</script>
+</body>
+</html>

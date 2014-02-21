@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>主窗口</title>
+    <link rel="stylesheet" type="text/css" href="css/friendList_css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/common_css.css"/>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/Iframe_css.css"/>
+</head>
+<body>
+
+<div id="friendListFrame">
+    <div class="friendListHeader"></div>
+    <div class="ListContent">
+        <div id="scrollBroad">
+            <div class="friendListBody" >
+
+            </div>
+            <!--好友管理-->
+            <div class="friendListBody" >
+                <div class="OneList" onmouseover="changeBackgroundBlue(this)" onmouseout="changeBackgroundWhite(this)" onclick="showAddFriends()">
+                    <img class="headPhoto"  src="image/addFriendIcon.png">
+                    <h1 class="specialLable">添加好友</h1>
+                </div>
+                <div class="OneList" onmouseover="changeBackgroundBlue(this)" onmouseout="changeBackgroundWhite(this)" onclick="createGroupSession()">
+                    <img class="headPhoto" src="image/groupIcon.png" >
+                    <h1 class="specialLable">创建群会话</h1>
+                </div>
+                <!--好友列表-->
+                <% for(var i=0;i!=friends.length;i++){ %>
+                <div class="OneList" onmouseover="changeBackgroundBlue(this)" onmouseout="changeBackgroundWhite(this)" onclick="clickFriendList(this)">
+                    <img class="headPhoto" src="image/head.jpg">
+                    <h1><%=friends[i].username%></h1>
+                    <div class="deleteIcon" onclick="clickDeleteFriend(this)"></div>
+                    <div class="emailHidden"><%=friends[i].email%></div>
+                    <div class="sign"><%=friends[i].signature%></div>
+                </div>
+                <% } %>
+            </div>
+            <!--个人设置那一栏-->
+            <div class="friendListBody" id="selfSetting">
+                <h3>注册邮箱</h3>
+                <h4>358597534@qq.com</h4>
+                <h3>个人昵称</h3>
+                <input class="settingInput"/>
+                <h3>个性签名</h3>
+
+                <input class="settingInput">
+                <button class="roundButton whiteButton saveButton"  onclick="saveInfo()">保存</button>
+            </div>
+
+            <!--账号管理-->
+            <div class="friendListBody" >
+                <img id="headCanvas"/>
+                <form action="/upload" enctype="multipart/form-data" method="post" target="stop">
+                    <h3>更换头像</h3>
+                    <input type="file" id="upload" name="upload" onchange="selectFile(this)">
+                    <input type="submit" class="roundButton whiteButton saveButton" value="修改头像" >
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="friendListNav">
+        <a class="NavItem SelectedItem" onclick="moveFriendListNav(0)">
+            <img class="NavIcon"  src="image/msg.png"/>
+            <h1>聊天</h1>
+        </a>
+
+        <a class="NavItem" onclick="moveFriendListNav(1)">
+            <img class="NavIcon" src="image/friend.png"/>
+            <h1>通讯录</h1>
+        </a>
+
+        <a class="NavItem" onclick="moveFriendListNav(2)">
+            <img class="NavIcon" src="image/person.png"/>
+            <h1>个人</h1>
+        </a>
+
+        <a class="NavItem" onclick="moveFriendListNav(3)">
+            <img class="NavIcon" src="image/manage.png"/>
+            <h1>管理</h1>
+        </a>
+
+    </div>
+</div>
+
+<div id="TalkingWindowFrame">
+    <div class="talkingWindowHeader">
+        <img id="talkingWindowTopHead" src="image/head.jpg"/>
+        <div class="nameAndSign">
+            <h1 id="talkingWindowTopName">用户名</h1>
+            <h2 id="talkingWindowTopSign">用户签名</h2>
+        </div>
+        <div id="starVideoChat" onclick="startVideoChat()"></div>
+    </div>
+    <div class="talkingWindowBody">
+        <div class="oneSession">
+            <div class="headTd"><img class="headPhotoforTalking" src="image/head.jpg"/></div>
+            <div class="bubbleSan"></div>
+            <div class="bubbleWord">测试语句</div>
+        </div>
+
+        <div class="timeBlock">
+            <a>2013年11月15日12:00</a>
+        </div>
+
+        <div class="oneSession mySession">
+            <div class="headTd"><img class="headPhotoforTalking" src="image/head.jpg"/></div>
+            <div class="bubbleSan"></div>
+            <div class="bubbleWord">测试语句</div>
+
+        </div>
+
+    </div>
+    <div class="talkingWindowButtom">
+        <input  id="wordInput" class="wordInput" placeholder="输入你要说的话" onkeydown="if(event.keyCode==13) sendMessage();"/>
+        <a class="roundButton whiteButton sendButton" onclick="sendMessage()"  >发送</a>
+    </div>
+
+    <div id="closeIcon" onclick="closeTalkingWindow()"></div>
+</div>
+
+<div id="videoWrapper">
+    <div class="title">
+        <a class="closeIcon" onclick="closeVideoChat()"></a>
+        <span>视频会话</span>
+    </div>
+    <div class="mainVideoContent">
+        <video id="main_video" autoplay></video>
+    </div>
+    <div class="smallVideoContent">
+        <video id="local_small_video" autoplay></video>
+    </div>
+
+</div>
+
+
+<!--遮罩层-->
+
+<div id="shadow"></div>
+
+
+<!--以下是弹出框-->
+<div id="createGroupSession" class="popUpMsg">
+    <div class="title">
+        <a class="closeIcon" onclick="closeGroupCreateList()"></a>
+        <span>创建群会话</span>
+    </div>
+    <div class="popUpContent fixSizeContent" id="onlineList">
+
+
+
+
+    </div>
+    <div class="popUpContent">
+        <div class="loading" id="loadingGroup"></div>
+        <div>
+            <span>选择人数:</span>
+            <span id="selectNum">0</span>
+            <button class="roundButton whiteButton conformButton" onclick="conformCreateGroup()">确认</button>
+        </div>
+
+
+    </div>
+</div>
+
+<div id="addFriends" class="popUpMsg">
+    <div class="title">
+        <a class="closeIcon" id="closeAddFriends" onclick="hideAddFriends()"></a>
+        <span>添加好友</span>
+    </div>
+    <div class="popUpContent">
+        <div>
+            <label for="friendsEmail">好友Email</label>
+            <input class="settingInput" name="friendsEmail" id="friendsEmail" type="text"/>
+        </div>
+        <div>
+            <button class="roundButton whiteButton conformButton" onclick="addFriends()">确认添加</button>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<div class="popUpMsg" id="systemInform">
+    <div class="title">
+        <span>系统消息</span>
+    </div>
+    <div class="popUpContent">
+        <div>
+            <span id="systemInformContent"></span>
+        </div>
+        <div>
+            <button class="roundButton whiteButton conformButton">确认</button>
+        </div>
+
+    </div>
+</div>
+
+<div class="OkMsg" id="okMsg">
+    <div>
+        <img src="image/Right.png"/>
+    </div>
+    <div>
+        <span id="OkMsgContent">添加好友成功</span>
+    </div>
+</div>
+
+
+
+<div class="OkMsg" id="waitingMsg">
+    <div>
+        <img src="image/Waiting.gif"/>
+    </div>
+    <div>
+        <span id="waitingMsgContent">等待用户接受</span>
+    </div>
+</div>
+
+
+<div class="popUpMsg" id="acceptInform">
+    <div class="title">
+        <span>请求消息</span>
+    </div>
+    <div class="popUpContent">
+        <div>
+            <span id="acceptInformContent"></span>
+        </div>
+        <div>
+            <div class="divider_two">
+                <button id="acceptInformOk" class="roundButton whiteButton conformButton">确认</button>
+            </div>
+            <div class="divider_two">
+                <button id="acceptInformNo" class="roundButton whiteButton conformButton">拒绝</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<iframe name="stop" src="" style="display:none"></iframe>
+
+<div class="test">
+    <a onclick="testReceive()">测试收到消息</a>
+    <a onclick="testShowMessage()">测试开新窗口</a>
+</div>
+
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script>socket=io.connect();
+socket.emit('login',{email:window.localStorage.getItem("email")});
+socket.emit('offline',{email:window.localStorage.getItem("email")},
+        function(result){if(result)console.log("offlinemsg receive success");});
+
+</script>
+<script type="text/javascript" src="js/VideoControl.js"></script>
+<script type="text/javascript" src="js/UiControl.js"></script>
+<script type="text/javascript" src="js/NetWorkModel.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/UserListControllor.js"></script>
+<script type="text/javascript" src="js/mainWindowControl.js"></script>
+<script type="text/javascript" src="js/TalkingClass.js"></script>
+<script type="text/javascript" src="js/socket_on.js"></script>
+</body>
+</html>
+
+
+

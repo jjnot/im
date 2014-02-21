@@ -1,0 +1,102 @@
+/*
+	Name: Global Form Styles
+	Description: Default styling for forms.
+				 Message classes borrowed from
+				 http://www.blueprintcss.org/
+	Coder: Enrique Ramirez
+	Coder URI: http://enrique-ramirez.com
+*/
+fieldset {
+	border: 1px solid #eee;
+	margin: 1.5em;
+	padding: 1em;
+}
+
+legend {
+	font-size: 1.25em;
+	margin-bottom: 0 !important;
+	margin-bottom: 1.5em;
+}
+
+label {
+	font-size: 1.1em;
+	height: 25px;
+	line-height: 25px;
+}
+
+.contact fieldset { text-align: left }
+.contact fieldset table { margin-left: -5px; width: 200px; text-align: left }
+
+fieldset p {clear: both; margin: 0 0 .5em 0;}
+
+	/* Input Types */
+	input.text {
+		font-size: 1.05em;
+		height: 24px;
+		margin-bottom: 7px;
+	}
+	
+	input.checkbox, input.radio {
+		display: block;
+		margin-top: 4px;
+	}
+	
+	/* Textarea */
+	textarea {width: 99%; margin-bottom: 7px;}
+
+	/* Alignments */
+	div.left {margin-left: 1em;}
+	div.right {margin-right: 1em;}
+	
+	.labels-left label, div.left label {
+		clear: left;
+		float: left;
+		margin-right: .5em;
+		text-align: right;
+	}
+	.labels-left input, div.left input, .labels-left select, div.left select {float: left;}
+	
+	.labels-right label, div.right label {
+		float: left;
+		margin-left: .5em;
+		text-align: right;
+	}
+	.labels-right input, div.right input, .labels-right select, div.right select {clear: left; float: left;}
+	
+	.labels-top label, div.top label {display: block;}
+	.labels-top input, div.top input {margin-bottom: 0;}
+	
+	/* Columns */
+	.columns-2 div.column1, .columns-2 div.column2 {float: left; width: 48%;}
+	.columns-2 input.text {width: 150px;}
+	
+	.columns-3 div.column1, .columns-3 div.column2, .columns-3 div.column3 {float: left; width: 33%;}
+	.columns-3 input.text {width: 120px;}
+	
+	.columns-2 div.left, .columns-2 div.right, .columns-2 div.top {width: 32%;}
+	.columns-3 div.left, .columns-3 div.right, .columns-3 div.top {width: 29%;}
+	
+/* Messages classes */
+.error,.notice, .success, .updated {
+	padding: .2em;
+	margin-bottom: 1em;
+	border: 2px solid #ddd;
+    margin: 15px 45px 30px 45px;
+}
+
+.error {background: #FBE3E4; border-color: #FBC2C4; color: #8a1f11;}
+.notice {background: #FFF6BF; border-color: #FFD324; color: #514721;}
+.success {background: #E6EFC2; border-color: #C6D880; color: #264409;}
+.updated {background: #E6EFC2; border-color: #C6D880; color: #264409;}
+
+.error a {color: #8a1f11 !important; text-decoration: underline !important;}
+.notice a {color: #514721 !important; text-decoration: underline !important;}
+.success a {color: #264409 !important; text-decoration: underline !important;}
+.updated a {color: #264409 !important; text-decoration: underline !important;}
+
+.error a:hover, .notice a:hover,
+.success a:hover, .updated a:hover {
+	background: #EA5509;
+	color: #fff !important;
+	text-decoration: none !important;
+}

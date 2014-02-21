@@ -1,0 +1,50 @@
+#GroupVideoChat{
+    height: auto;
+    width: 500px;
+    position: absolute;
+    top: 30px;
+    left: 810px;
+    border: 2px #e6e7e4 solid ;
+
+    box-shadow: 0px 0px 10px lightgrey;
+    border-radius: 10px;
+    background: #ffffff;
+    min-height: 244px;
+    display: none;
+
+}
+
+.groupVideoContent{
+    width: 450px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.groupVideoContent video{
+
+    width: 200px;
+    height: 150px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #606060;
+    display: inline;
+}
+
+.groupVideoContent:after{
+    display:block;
+    clear:both;
+    content:"";
+    visibility:hidden;
+    height:0;
+
+}
+
+#starVideoChat.groupChatIcon{
+    right: 20px;
+    top: 10px;
+}

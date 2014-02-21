@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>群聊天</title>
+    <link rel="stylesheet" type="text/css" href="css/friendList_css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/common_css.css"/>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/Iframe_css.css"/>
+    <link rel="stylesheet" type="text/css" href="css/groupChat.css"/>
+</head>
+<body onload="init();">
+
+<!--
+<div id="listDock" style="display: block;" onMouseOver="javascript:if(dockf)setFace(1);">
+</div>-->
+
+    <div id="friendListFrame2" style="display: block" >
+        <div class="title">
+            <span>成员用户</span>
+        </div>
+
+        <div class="ListContent">
+            <div id="scrollBroad">
+                <% for(var i=0;i!=friends.length;i++){ %>
+                <div class="OneList" onmouseover="changeBackgroundBlue(this)" onmouseout="changeBackgroundWhite(this)" onclick="clickFriendList(this)">
+                    <img class="headPhoto" src="image/head.jpg">
+                    <h1><%=friends[i].username%></h1>
+                </div>
+                <% } %>
+            </div>
+        </div>
+        </div>
+
+    <div id="TalkingWindowFrame2" style="display: block">
+        <div class="title">
+            <span>群体会话</span>
+            <div id="starVideoChat" class="groupChatIcon" onclick="getOwnCamera()" ></div>
+        </div>
+        <div class="talkingWindowBody">
+
+        </div>
+        <div class="talkingWindowButtom">
+            <input  id="wordInput" class="wordInput" placeholder="输入你要说的话" onkeydown="if(event.keyCode==13) sendMessage();"/>
+            <a class="roundButton whiteButton sendButton" onclick="groupSendMessage(roomid)"  >发送</a>
+        </div>
+    </div>
+
+    <div id="GroupVideoChat">
+        <div class="title">
+            <span>群体视频</span>
+        </div>
+        <div class="groupVideoContent">
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!--以下是弹出框-->
+
+<div class="popUpMsg" id="systemInform">
+    <div class="title">
+        <span>系统消息</span>
+    </div>
+    <div class="popUpContent">
+        <div>
+            <span id="systemInformContent"></span>
+        </div>
+        <div>
+            <button class="roundButton whiteButton conformButton">确认</button>
+        </div>
+
+    </div>
+</div>
+
+<div class="OkMsg" id="okMsg">
+    <div>
+        <img src="image/Right.png"/>
+    </div>
+    <div>
+        <span id="OkMsgContent">添加好友成功</span>
+    </div>
+</div>
+
+
+
+<div class="OkMsg" id="waitingMsg">
+    <div>
+        <img src="image/Waiting.gif"/>
+    </div>
+    <div>
+        <span id="waitingMsgContent">等待用户接受</span>
+    </div>
+</div>
+
+
+<div class="popUpMsg" id="acceptInform">
+    <div class="title">
+        <span>请求消息</span>
+    </div>
+    <div class="popUpContent">
+        <div>
+            <span id="acceptInformContent"></span>
+        </div>
+        <div>
+            <div class="divider_two">
+                <button id="acceptInformOk" class="roundButton whiteButton conformButton">确认</button>
+            </div>
+            <div class="divider_two">
+                <button id="acceptInformNo" class="roundButton whiteButton conformButton">拒绝</button>
+            </div>
+        </div>
+    </div>
+</div>
+<a onclick="test()">测试</a>
+<a onclick="test2()">测试2</a>
+</body>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script>
+    socket=io.connect();
+    var url=document.location.href.split('=');
+    socket.emit('loginbygroup',{roomid:url[1],email:window.localStorage.getItem('email')});
+</script>
+<script type="text/javascript" src="js/NetWorkModel.js"></script>
+<script type="text/javascript" src="js/groupvideo.js"></script>
+<script type="text/javascript" src="js/VideoControl.js"></script>
+<script type="text/javascript" src="js/UserListControllor.js"></script>
+<script type="text/javascript" src="js/TalkingClass.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/UiControl.js"></script>
+<script type="text/javascript" src="js/initGroup.js"></script>
+<script type="text/javascript" src="js/mainWindowControl.js"></script>
+<script type="text/javascript" src="js/socket_on.js"></script>
+
+
+
+
+<script>
+
+</script>
+
+</html>

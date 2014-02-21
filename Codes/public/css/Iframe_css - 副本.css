@@ -1,0 +1,499 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+    padding:0px;
+    margin:0px;
+    width: 100%;
+    font-family: "微软雅黑";
+}
+
+
+
+#friendListFrame{
+    box-shadow: 0px 0px 10px lightgrey;
+    border-radius: 10px;
+    position: absolute;
+    left: 130px;
+    top: 30px;
+    height: 704px;
+    width: 350px;
+    border: 2px #e6e7e4 solid;
+}
+
+#listDock{
+	position: absolute;
+    left: 0px;
+    top:30px;
+	width:20px;
+}
+
+#TalkingWindowFrame{
+    background: #ffffff;
+    display: none;
+    position: absolute;
+    top:30px;
+    left: 545px;
+    height: auto;
+    width: 540px;
+    border: 2px #e6e7e4 solid ;
+
+    box-shadow: 0px 0px 10px lightgrey;
+    border-radius: 10px;
+}
+
+
+
+
+
+/* 对话框的设计*************************************/
+
+
+.oneSession{
+    float: left;
+    height: auto;
+    width: 100%;
+    margin-top: 5px;
+}
+.headPhotoforTalking{
+    float: left;
+    width: 60px;
+    height: 60px;
+    padding:10px;
+    padding-top: 20px;
+}
+
+.bubbleWord{
+    float: left;
+    width: auto;
+    max-width: 80%;
+    height: auto;
+    line-height: 30px;
+    font-size: 18px;
+    padding: 15px 20px 15px 20px;
+    border-radius: 12px;
+    margin-top: 2px;
+    background: powderblue;
+
+
+}
+.SessionContent{
+    width: 80%;
+    float: left;
+}
+
+.SessionContent .username{
+    width: 100%;
+    float: left;
+    margin-top: 15px;
+    margin-left: 25px;
+    color: #8b8e91;
+}
+
+.headTd{
+    width:80px;
+    float: left;
+    height: 100%;
+}
+
+
+
+.bubbleSan{
+    float: left;
+    width:0;
+    height:0;
+    border-width:10px;
+    border-style:solid;
+    border-color:#ffffff powderblue #ffffff #ffffff;
+    margin-top: 15px;
+}
+
+.wordInput{
+    outline: none;
+    float: left;
+    width: 65%;
+    margin-left: 5%;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.sendButton{
+    width: 20%;
+    height: 30px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 5%;
+    line-height: 30px;
+}
+.roundButton{
+
+    display: block;
+    zoom: 1;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font:14px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+
+}
+
+.whiteButton{
+    color: #606060;
+    border: solid 1px #b7b7b7;
+    background: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+    background: -moz-linear-gradient(top, #fff, #ededed);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+
+}
+
+.whiteButton:hover {
+    background: #ededed;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
+    background: -moz-linear-gradient(top,  #fff,  #dcdcdc);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
+}
+
+.talkingWindowHeader{
+    cursor:move;
+    border-radius: 10px 10px 0 0;
+    display: block;
+    height: 80px;
+    width: 100%;
+    border-bottom: #e6e7e4 2px solid;
+    background-color: #f8f8f8;
+}
+
+
+.talkingWindowBody{
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 666px;
+    width: 100%;
+    display: block;
+    padding-bottom: 20px;
+}
+
+.talkingWindowButtom{
+    height: 50px;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    border-top: #e6e7e4 2px solid;
+    background-color: #f8f8f8;
+}
+
+.nameAndSign h1{
+    display: block;
+    float: left;
+    padding: 10px 5px 5px 5px ;
+    font-size: 1.5em;
+    font-family: "微软雅黑";
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+}
+
+
+
+.nameAndSign h2{
+    padding: 0px 5px 5px 5px ;
+    font-size: 1em;
+    font-family: "微软雅黑";
+    font-weight: 100;
+    color: #606060;
+    clear: left;
+
+
+}
+
+.talkingWindowHeader img{
+    height: 60px;
+    width: 60px;
+    border: white 5px solid;
+    display: block;
+    float: left;
+    margin: 5px;
+}
+
+.nameAndSign{
+    width: 325px;
+    height: 100%;
+    display: block;
+    float: left;
+}
+
+
+.mySession .headTd{
+    float: right;
+}
+
+.mySession .bubbleSan{
+    float: right;
+    border-color:#ffffff  #ffffff #ffffff lightgreen;
+
+}
+
+.mySession .bubbleWord{
+    float: right;
+    background: lightgreen;
+}
+
+.mySession .username{
+    float: right;
+    margin-left: 0;
+    margin-right: 25px;
+    text-align: right;
+}
+.mySession .SessionContent{
+    float: right;
+}
+
+.timeBlock{
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    float: left;
+    height: auto;
+
+}
+
+.timeBlock a{
+    width: auto;
+    height: auto;
+    display: inline;
+    background: #e6e7e4;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 4px;
+    border-radius: 2px;
+}
+
+
+.popUpMsg{
+    box-shadow: 0px 0px 10px lightgrey;
+    background: #f8f8f8;
+    position: fixed;
+    top: 30%;
+    left: 35%;
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
+    display: none;
+}
+
+.title{
+    margin: 0;
+    border-radius: 10px  10px 0 0;
+    height: 45px;
+    background-color: #606060;
+    cursor:move;
+
+
+}
+
+.title span{
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 370px;
+    line-height: 45px;
+    color: #ffffff;
+}
+
+.popUpContent div {
+    overflow: hidden;
+    height: auto;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+
+}
+
+.popUpContent label{
+    display: block;
+    margin-bottom: 10px;
+}
+
+.conformButton{
+    margin: auto;
+    height: 30px;
+    width: 100%;
+}
+
+.title .closeIcon{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #FFCA3B;
+    width: 25px;
+    height: 25px;
+    display: block;
+    cursor: pointer;
+
+}
+
+.OkMsg{
+    display: none;
+    box-shadow: 0px 0px 10px lightgrey;
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.8);
+}
+
+
+.OkMsg img{
+    height: 120px;
+    width: 120px;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.OkMsg div{
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.OkMsg span{
+    color: #ffffff;
+    margin: auto;
+    width: 120px;
+    display: block;
+    text-align: center;
+}
+
+
+
+/*@视频模块-----------------------------------------*/
+
+#starVideoChat{
+    height: 30px;
+    width: 30px;
+    background-color: #FFCA3B;
+    position: absolute;
+    right: 60px;
+    top: 15px;
+    cursor: pointer;
+
+}
+#videoWrapper{
+    display: none;
+    width: 340px;
+    box-shadow: 0px 0px 10px lightgrey;
+    border-radius: 10px;
+    position: absolute;
+    left: 960px;
+    top:30px;
+    height: auto;
+    border: 2px #e6e7e4 solid;
+}
+
+.mainVideoContent{
+    width: 100%;
+    margin-top: 20px;
+    height: auto;
+}
+
+.mainVideoContent video{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    display: block;
+}
+
+.smallVideoContent{
+    width: 100%;
+    margin-top: 20px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.smallVideoContent video{
+    width: 100px;
+    height: 100px;
+    float: right;
+    margin-right: 10px;
+}
+
+.divider_two{
+    width: 50%;
+    margin: 0;
+    height: auto;
+    display: inline;
+}
+
+.fixSizeContent{
+    width: 100%;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+
+
+.popUpContent span{
+    display: inline-block;
+    width: auto;
+    padding-bottom: 10px;
+}
+
+.popUpContent .OneList{
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.popUpContent .OneList img{
+    height: 34px;
+    width: 34px;
+    padding: 5px;
+}
+
+.popUpContent .OneList h1{
+    font-size: 16px;
+    line-height: 34px;
+    margin-top: 0;
+    padding: 5px;
+}
+
+.popUpContent .selectIcon   {
+    display: block;
+    height: 24px;
+    width: 24px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 13px;
+    padding: 0;
+
+}
+
+.popUpContent .noSelect{
+    background: #8b8e91;
+}
+
+.popUpContent .Selected{
+    background: #FFCA3B;
+}
+
+
+
+.Sessioncontent:after{
+    display:block;
+    clear:both;
+    content:"";
+    visibility:hidden;
+    height:0;
+}

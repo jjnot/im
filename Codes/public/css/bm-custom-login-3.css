@@ -1,0 +1,161 @@
+html {background: #009FDD url('../image/main-bg.jpg') no-repeat top center; height: 100%;}
+body {min-height: 450px;}
+body.login {background: #009FDD url('../image/main-bg.jpg') no-repeat top center;}
+
+img {
+	behavior: url(../../wp-content/plugins/bm-custom-login/iepngfix.htc);
+}
+
+#login {
+	/* background-color: rgb(10, 10, 10);
+	background-color: rgba(0, 0, 0, .74); */
+	background: url('../image/bg-login.png') no-repeat;
+	behavior: url(../../wp-content/plugins/bm-custom-login/iepngfix.htc);
+	margin: 50px auto 0 auto;
+	width: 419px;
+}
+
+#login h1 {
+	width: 400px;
+}
+
+#login form {
+	margin-top: 0px;
+	margin-left: 8px;
+	padding: 16px 16px 40px 16px;
+	font-weight: normal;
+	-moz-border-radius: 11px;
+	-khtml-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 5px;
+}
+
+#backtoblog a {color: #fff;}
+
+/*  This makes the core background color for the login form transparent so 
+    your graphic will show through in all three form states. 
+*/
+#loginform, #registerform, #lostpasswordform {
+	background-color: transparent;
+}
+
+/*  If you have a light background as your login form graphic, change the color
+    here. #fff = white, #000 = black. This changes the Username, Password and 
+    'Remeber Me' text color. 
+*/
+form {
+	color:#fff;
+	border: 0;
+	
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	-khtml-box-shadow: none;
+	box-shadow: none;
+}
+
+label {color: #fff;}
+
+/*  This hides the WordPress logo. The height parameter also adjust where the 
+    first input or message box begins. 
+*/
+h1 a {
+	background: transparent;
+	height: 122px;
+	width: 380px;
+}
+
+/*  Even though this is the navigation div for the links at the bottom of the 
+    login form, it also controls the bottom image that gives the login form a 
+    nice curved corner feel. 
+*/
+#nav {
+	background:none;
+	width:380px;
+	height:45px;
+	text-indent: 26px;
+	margin:0px; padding: 0px;
+}
+
+.login #nav a {
+	color:#fff;
+}
+
+#login form .submit input {	
+	margin-right: 11px;
+}
+
+/*  Attributes for the errors and messages box. These can be broken up if you 
+    want to display a differnet color scheme for messages and errors. 
+*/
+#login p.message {
+	padding: 12px;
+	margin: 10px 26px 0px 24px;
+}
+
+#login #login_error {
+	padding: 12px;
+	margin: 15px 38px 0px 24px;
+}
+
+/*  Form input box attributes. 
+*/
+#user_pass, #user_login, #user_email {
+	font-size: 20px;
+	width: 94%;
+	/* width:318px; this width is the same as 94% */
+}
+#nav {text-shadow: none;}
+
+/* Signup Login */
+#login.signup {
+	background-image: url('../image/congratulations.png');
+	behavior: url(../../wp-content/plugins/bm-custom-login/iepngfix.htc);
+	background-position: center 25px;
+	background-color: #304250;
+	color: #fff;
+	-moz-border-radius: 11px;
+	-khtml-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 11px;
+}
+#login.signup .congrats {font-size: 1.1em; padding: 75px 16px 0 16px; margin: 0 0 0 8px;}
+#login.signup.clean .congrats {padding-bottom: 2em;}
+
+
+/* Register button fix 		*/
+#wrap {
+	float: none;
+	overflow: hidden;
+	width: 900px;
+	
+	position: relative;
+	margin: 0 auto !important;
+	margin: 0 0 0 100px;
+}
+#wrap #login { float: left; }
+#register-image { 	
+	float: right; 
+	background: transparent url('../image/logo-register.png') no-repeat;
+	behavior: url(../../wp-content/plugins/bm-custom-login/iepngfix.htc);
+	height:142px;
+	margin: 50px auto 0 auto;
+	width: 390px;
+	padding: 20px;
+	height: 142px;
+	
+	}
+#register-image img { border: 0; }
+#register-image p { color: #fff; margin: 6px 0 0 2px; font-size: 12px; font-weight: bold; }
+#whyregister{
+	background: transparent url('../image/why-register.png') no-repeat top center;
+	height:44px;
+	margin-top:45px;
+	padding:10px 20px;
+	width:832px;
+	color:#fff
+}
+
+/*fix the recovery password form */
+#login_error, #login p.message {color:white}
+p.message {border-color: orange}
+#login #login_error {color:black;border-color: red}
