@@ -1,0 +1,333 @@
+html {
+    -ms-touch-action: none;
+}
+
+body,ul,li {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    font-size: 12px;
+    font-family: ubuntu, helvetica, arial;
+    overflow: hidden; /* this is important to prevent the whole page to bounce */
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+.header {
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    background: #F4F4F4;
+    border-bottom: 1px solid #DBDBDB;
+    padding: 0;
+    color: #444444;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.footer {
+    position: absolute;
+    z-index: 99;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background: #F4F4F4;
+    padding: 0;
+    border-top: 1px solid #DBDBDB;
+}
+
+.wrapper {
+    transition: 1s opacity;
+    position: absolute;
+    z-index: 1;
+    top: 45px;
+    bottom: 45px;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.scroller {
+    position: absolute;
+    z-index: 1;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    width: 100%;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    -o-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+.scroller ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.scroller li {
+    overflow: hidden;
+    background-color: #ffffff;
+    font-size: 14px;
+}
+
+
+/* Styled scrollbars */
+
+
+
+.iScrollVerticalScrollbar {
+    position: absolute;
+    z-index: 9999;
+    width: 6px;
+    bottom: 2px;
+    top: 2px;
+    right: 2px;
+    overflow: hidden;
+
+}
+
+.iScrollVerticalScrollbar.iScrollBothScrollbars {
+    bottom: 18px;
+}
+
+.iScrollIndicator {
+    position: absolute;
+    background: none;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 6px;
+}
+
+
+.iScrollVerticalScrollbar .iScrollIndicator {
+    width: 100%;
+    background: #57D5C9;
+    border:none;
+}
+
+
+/* end */
+
+/*@底部导航栏*/
+.bottom-nav{width: 100%;height: 35px;margin-top: 5px;margin-bottom: 5px;}
+.bottom-nav li{width: 25%;height: 100%;float: left;list-style: none;text-align: center}
+/*END*/
+
+/*@顶部header*/
+.header-left-bottom{float: left;margin-left: 5px;   }
+.title{position: relative;margin-left: 20%;margin-right: 20%;width: 60%;height: 40px;display: block;text-align: center;}
+/*END*/
+
+/*@列表*/
+.wrapper li{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.friendList{
+    border-bottom: 1px #e9e9e9 solid;
+    border-top: 0;
+}
+.friendList .headPhoto{
+    float: left;
+    height:45px;
+    width: 45px;
+}
+.friendList h1{
+    float: left;
+    width: auto;
+    margin: 0 0 0 5px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 45px;
+
+}
+.friendList .emailHidden{display: none}
+
+.friendList .alertNumber{
+    background: lightcoral;
+    display: block;
+    height: 20px;
+    width: auto;
+    float: right;
+    margin-right: 10px;
+    margin-top: 12px;
+    border-radius: 3px;
+    padding:0 5px 0 5px;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+
+
+/*END*/
+/*@聊天窗口*/
+#session_wrapper li{
+    border: 0;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.bubbleWord{
+    float: left;
+    width: auto;
+    max-width: 80%;
+    height: auto;
+    line-height: 20px;
+    font-size: 14px;
+    padding: 10px 8px 10px 8px;
+    border-radius: 5px;
+    margin-top: 2px;
+    background: powderblue;
+
+
+}
+.SessionContent{
+    width: 80%;
+    float: left;
+}
+
+.SessionContent .username{
+    width: 100%;
+    float: left;
+    margin-left: 5px;
+    color: #8b8e91;
+}
+
+.headTd{
+    width:20%;
+    float: left;
+    height: 100%;
+}
+.headTd img {width: 95%;height: auto;margin:0 5% 0 0;}
+
+
+
+.bubbleSan{
+    float: left;
+    width:0;
+    height:0;
+    border-width:5px;
+    border-style:solid;
+    border-color:#ffffff powderblue #ffffff #ffffff;
+    margin-top: 15px;
+}
+
+
+
+.mySession .headTd{
+    float: right;
+}
+.mySession .headTd img{margin:0 0 0 5%;}
+
+.mySession .bubbleSan{
+    float: right;
+    border-color:#ffffff  #ffffff #ffffff lightgreen;
+
+}
+
+.mySession .bubbleWord{
+    float: right;
+    background: lightgreen;
+}
+
+.mySession .username{
+    float: right;
+    margin-left: 0;
+    margin-right: 5px;
+    text-align: right;
+}
+.mySession .SessionContent{
+    float: right;
+}
+.wordForm{
+    float: left;
+    width: 80%;
+    margin-left: 2%;
+    height: 35px;
+}
+.wordInput{
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    margin-left: 2%;
+    height: 35px;
+    border: 1px solid silver;
+    border-radius: 3px;
+}
+
+.sendButton{
+    text-align: center;
+    width: 18%;
+    height: 35px;
+    float: left;
+    font-size: 16px;
+    font-weight: 800;
+    color: #444444;
+    line-height: 35px;
+}
+
+
+
+/*end/*
+
+
+/*@按钮区*/
+.roundButton{
+    display: block;
+    zoom: 1;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font:14px;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+.whiteButton{
+    color: #606060;
+    border: solid 1px #b7b7b7;
+    background: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+    background: -moz-linear-gradient(top, #fff, #ededed);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+
+}
