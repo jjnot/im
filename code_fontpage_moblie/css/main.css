@@ -155,29 +155,28 @@ body {
     padding-right: 5px;
     padding-left: 5px;
 }
-.friendList{
+.friendListLi {
     border-bottom: 1px #e9e9e9 solid;
     border-top: 0;
 }
-.friendList .headPhoto{
+.friendListLi .headPhoto{
     float: left;
     height:45px;
     width: 45px;
 }
-.friendList h1{
+.friendListLi h1{
     float: left;
     width: auto;
-    margin: 0 0 0 5px;
-    font-size: 20px;
+    margin: 0 0 0 10px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 45px;
 
 }
-.friendList .emailHidden{display: none}
+.friendListLi .emailHidden{display: none}
 
-.friendList .alertNumber{
+.friendListLi .alertNumber{
     background: lightcoral;
-    display: block;
     height: 20px;
     width: auto;
     float: right;
@@ -189,6 +188,16 @@ body {
     font-size: 14px;
     line-height: 20px;
     text-align: center;
+}
+.friendListLi .signature{
+    font-size: 14px;
+    line-height: 45px;
+    float: right;
+    color: #8b8e91;
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
@@ -304,30 +313,73 @@ body {
 
 /*end/*
 
-
-/*@按钮区*/
-.roundButton{
-    display: block;
-    zoom: 1;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    font:14px;
-    text-shadow: 0 1px 1px rgba(0,0,0,.3);
-    -webkit-border-radius: .5em;
-    -moz-border-radius: .5em;
-    border-radius: .5em;
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+/*@游戏区*/
+.gameList{
+    height: auto;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin-bottom: 5px;
+    border-bottom: 1px #e9e9e9 solid;
+    border-top: 0;
 }
 
-.whiteButton{
-    color: #606060;
-    border: solid 1px #b7b7b7;
-    background: #fff;
-    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
-    background: -moz-linear-gradient(top, #fff, #ededed);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+.gameTitle{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 100%;
+    height: 45px;
+}
+.gameTitle h1{
+    float: left;
+    width: auto;
+    margin: 0 0 0 10px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 45px;
+}
+.gameList p{
+    color: #8b8e91;;
+}
+
+.gameIcon{
+    width: 45px;
+    height: 45px;
+    float: left;
+}
+
+.gameList .createTag{
+    float: right;
+    color: #57D5C9;
+}
+/*END*/
+/*@个人设置区*/
+.self_setting{
+    padding-left: 10px !important;
+    padding-right: 20px !important;
+    border-bottom: 1px #e9e9e9 solid;
 
 }
+.self_setting img{
+    width: 40px;
+    height: 40px;
+    float: right;
+}
+.self_setting h2{
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.self_setting h3{
+    max-width: 200px;
+    float: right;
+    font-size: 14px;
+    font-weight: 100;
+    color: #8b8e91;
+    line-height: 20px;
+}
+/*END*/
+
+/*@公共区*/
+.hidden{display: none}
