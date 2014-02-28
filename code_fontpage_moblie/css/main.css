@@ -238,6 +238,7 @@ body {
 
 .headTd{
     width:20%;
+    max-width: 60px;
     float: left;
     height: 100%;
 }

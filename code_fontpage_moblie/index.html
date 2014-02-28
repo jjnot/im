@@ -24,19 +24,16 @@
     <div class="header">主页面</div>
 
     <div class="wrapper" id="taking_wrapper">
+
+        <div id="test1">测试按钮1</div>
+        <div id="test3">测试按钮3</div>
         <div  class="scroller">
             <ul id="takingListUl">
-                <li class="friendListLi">
-                    <img class="headPhoto" src="image/head.jpg" />
-                    <h1>用户名</h1>
-                    <div class="alertNumber" >1</div>
-                    <div class="emailHidden">123456@qq.com</div>
-                </li>
-                <li id="test1">测试按钮</li>
             </ul>
         </div>
     </div>
     <div class="wrapper" id="friend_wrapper" style="display: none">
+        <div id="test2">测试按钮</div>
         <div  class="scroller">
             <ul id="friendListUl">
                 <li class="friendListLi">
@@ -44,13 +41,7 @@
                     <h1>添加好友</h1>
                 </li>
 
-                <li class="friendListLi">
-                    <img class="headPhoto" src="image/head.jpg" />
-                    <h1>好友1</h1>
-                    <div class="signature">好友签名aaaaaaaaaaaaaaaaa</div>
-                    <div class="deleteIcon"></div>
-                    <div class="emailHidden">123456@qq.com</div>
-                </li>
+
 
             </ul>
         </div>
@@ -119,71 +110,13 @@
 
 <!--主页面END-->
 <div id="talkingPage" class="push-page" style="display: none">
-    <div class="header"><a class="header-left-bottom" onclick="goBack()">返回</a>
+    <div class="header"><a class="header-left-bottom" onclick="MainControl.goBack()">返回</a>
         <div class="title">聊天页</div>
     </div>
     <div class="wrapper" id="session_wrapper" >
-        <ul class="scroller">
-            <li class="mySession">
-                <div class="headTd">
-                    <img class="headPhotoforTalking" src="image/head.jpg">
-                </div>
-                <div class="SessionContent">
-                    <span class="username">用户名</span>
-                    <div class="bubbleSan"></div>
-                    <div class="bubbleWord">测试收到话语啊啊啊啊啊啊啊</div>
-                </div>
-            </li>
-            <li>
-                <div class="headTd">
-                    <img class="headPhotoforTalking" src="image/head.jpg">
-                </div>
-                <div class="SessionContent">
-                    <span class="username">用户名</span>
-                    <div class="bubbleSan"></div>
-                    <div class="bubbleWord">测试收到话语啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
-                </div>
-            </li>
-            <li class="mySession">
-                <div class="headTd">
-                    <img class="headPhotoforTalking" src="image/head.jpg">
-                </div>
-                <div class="SessionContent">
-                    <span class="username">用户名</span>
-                    <div class="bubbleSan"></div>
-                    <div class="bubbleWord">测试收到话语</div>
-                </div>
-            </li>
-            <li>
-                <div class="headTd">
-                    <img class="headPhotoforTalking" src="image/head.jpg">
-                </div>
-                <div class="SessionContent">
-                    <span class="username">用户名</span>
-                    <div class="bubbleSan"></div>
-                    <div class="bubbleWord">测试收到话语啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
-                </div>
-            </li>
-            <li>
-                <div class="headTd">
-                    <img class="headPhotoforTalking" src="image/head.jpg">
-                </div>
-                <div class="SessionContent">
-                    <span class="username">用户名</span>
-                    <div class="bubbleSan"></div>
-                    <div class="bubbleWord">测试收到话语啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
-                </div>
-            </li>
-            <li>
-                <div class="headTd">
-                    <img class="headPhotoforTalking" src="image/head.jpg">
-                </div>
-                <div class="SessionContent">
-                    <span class="username">用户名</span>
-                    <div class="bubbleSan"></div>
-                    <div class="bubbleWord">测试收到话语啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</div>
-                </div>
-            </li>
+        <ul class="scroller" id="sessionListUl">
+            <li id="test5">测试5</li>
+            <li id="test6">测试6</li>
         </ul>
     </div>
     <div class="footer">
@@ -202,45 +135,57 @@
 <!-- JS-->
 <script type="text/javascript">
     window.onload=function() {
-        window.onpopstate = function(){
-            popPage(history.state.pageid);
-        };
+
         window.history.replaceState({'pageid':'mainPage'},'home','');
         //测试代码
         $("#test1").on('click',function(){
-            window.DomModule.addItemToTalkingList([{'username':'测试明',
-                'email':'head'
+            window.DomModule.addItemToTalkingList([{'username':'小明明',
+                'email':'xiaoming@qq.com'
+            },{'username':'小红',
+                'email':'xiaohong@qq.com'
+            },{
+                'username':'小张',
+                'email':'xiaozhang@qq.com'
             }]);
+        });
+        $("#test2").on('click',function(){
+            window.DomModule.addItemToFriendsList([{'username':'测试明',
+                'email':'head','signature':'我的签名啊'
+            }]);
+        });
+        $("#test3").on('click',function(){
+            window.DomModule.removeItemFromList({
+                'email':"xiaohong@qq.com"
+            },'talkingList')
+        });
+        $("#test5").on('click',function(){
+            window.DomModule.addSentenceToSession({
+                'email':"xiaohong@qq.com",
+                'username':'测试用户',
+                'fromSelf':true,
+                'message':'如果有人突然出现请不要惊讶'
+            },'talkingList')
+        });
+        $("#test6").on('click',function(){
+            window.DomModule.addSentenceToSession({
+                'email':"xiaohong@qq.com",
+                'username':'测试用户',
+                'fromSelf':false,
+                'message':'如果有人突然出现请不要惊讶o'
+            },'talkingList')
         })
     };
 
 
 
-    function changeTag(num){
 
-    }
-    function goBack(){
-        window.history.back();
-    }
-
-    function popPage(id){
-        $(".push-page").hide();
-        $("#"+id).show();
-    }
-
-    function pushPage(id){
-        $(".push-page").hide();
-        $("#"+id).show();
-        session_wrapper.refresh();
-        window.history.pushState({'pageid':id},id,'?page='+id);
-    }
 
 </script>
-<script src="js/zepto.min.js"></script>
-<script src="js/iscroll.js"></script>
+<script src="js/plus/zepto.min.js"></script>
+<script src="js/plus/iscroll.js"></script>
 <script src="js/im_mainControl.js"></script>
 <script src="js/im_DomModule.js"></script>
-<script type='application/javascript' src='js/fastclick.js'></script>
+<script type='application/javascript' src='js/plus/fastclick.js'></script>
 
 </body>
 </html>

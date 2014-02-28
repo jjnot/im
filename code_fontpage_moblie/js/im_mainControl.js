@@ -1,5 +1,7 @@
 /**
  * Created by fiffy on 14-2-25.
+ * 页面主控制器
+ * 用户控制页面切换，Iscroll刷新事件
  */
 
 (function(window,$){
@@ -22,6 +24,14 @@
         window.addEventListener('load', function() {
             FastClick.attach(document.body);
         }, false);
+        window.history.replaceState( {'pageid':'mainPage'}, '', '');
+        if(!/index.html$/.test(document.location.href)){
+            window.location.href="index.html";
+        }
+        window.onpopstate = function(){
+            _this.popPage(history.state.pageid);
+        };
+
 
 
     };
@@ -88,6 +98,13 @@
             fadeScrollbars:true
         });
     };
+
+    MainControl.prototype.refreshScroll=function(scrollId){
+        var _this=this;
+        if(_this.iscrollWarpper.scrollId){
+
+        }
+    };
     MainControl.prototype.attachAction=function(){
         var _this=this;
         //绑定 tag切换
@@ -126,6 +143,22 @@
         this.iscrollWarpper[tagID].refresh();
         $("#mainPage .header").text(this.config.tagTitle[tagID]);
     };
+
+    //push页面
+    MainControl.prototype.pushPage=function(pageID){
+        $(".push-page").hide();
+        $("#"+pageID).show();
+        window.history.pushState({'pageid':pageID},pageID,'?page='+pageID);
+    };
+    //pop页面回调 返回上层
+    MainControl.prototype.popPage=function(pageID){
+            $(".push-page").hide();
+            $("#"+pageID).show();
+    };
+    MainControl.prototype.goBack=function(){
+        window.history.back();
+    };
+
 
     if(!window.MainContorl){
         window.MainControl=new MainControl();
