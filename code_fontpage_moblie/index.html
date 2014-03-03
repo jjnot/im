@@ -25,24 +25,18 @@
 
     <div class="wrapper" id="taking_wrapper">
 
-        <div id="test1">测试按钮1</div>
-        <div id="test3">测试按钮3</div>
         <div  class="scroller">
             <ul id="takingListUl">
             </ul>
         </div>
     </div>
     <div class="wrapper" id="friend_wrapper" style="display: none">
-        <div id="test2">测试按钮</div>
         <div  class="scroller">
             <ul id="friendListUl">
                 <li class="friendListLi">
                     <img class="headPhoto" src="image/addFriendIcon.png" />
                     <h1>添加好友</h1>
                 </li>
-
-
-
             </ul>
         </div>
     </div>
@@ -55,17 +49,11 @@
                         <img class="gameIcon" src="image/head.jpg"/>
                         <h1>谁是卧底</h1>
                     </div>
-                    <p>谁是卧底的介绍啊介绍啊介绍啊介绍</p>
+                    <p>“谁是卧底”从捉鬼游戏蜕变而来，快乐大本营节目将改编后的游戏命名为“谁是卧底”，是一
+                        个非常有趣，风靡全国的比拼语言表述能力、知识面与想象力的游戏。是多人聚会聚餐时的首选欢乐游戏。</p>
                     <a class="createTag">创建游戏>></a>
                 </li>
-                <li class="gameList">
-                    <div class="gameTitle">
-                        <img class="gameIcon" src="image/head.jpg"/>
-                        <h1>谁是卧底</h1>
-                    </div>
-                    <p>谁是卧底的介绍啊介绍啊介绍啊介绍</p>
-                    <a class="createTag">创建游戏>></a>
-                </li>
+
             </ul>
         </div>
     </div>
@@ -111,12 +99,10 @@
 <!--主页面END-->
 <div id="talkingPage" class="push-page" style="display: none">
     <div class="header"><a class="header-left-bottom" onclick="MainControl.goBack()">返回</a>
-        <div class="title">聊天页</div>
+        <div class="title" id="talkingTarget">聊天页</div>
     </div>
     <div class="wrapper" id="session_wrapper" >
         <ul class="scroller" id="sessionListUl">
-            <li id="test5">测试5</li>
-            <li id="test6">测试6</li>
         </ul>
     </div>
     <div class="footer">
@@ -183,9 +169,12 @@
 </script>
 <script src="js/plus/zepto.min.js"></script>
 <script src="js/plus/iscroll.js"></script>
-<script src="js/im_mainControl.js"></script>
+<script src="js/UiFrame.js"></script>
+<script src="js/im_NetworkModule.js"></script>
 <script src="js/im_DomModule.js"></script>
+<script src="js/im_DataModule.js"></script>
 <script type='application/javascript' src='js/plus/fastclick.js'></script>
+<script src="js/im_mainControl.js"></script>
 
 </body>
 </html>

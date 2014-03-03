@@ -17,10 +17,9 @@
         _this.initIscrollList();
         _this.attachAction();
         _this.initConfig();
-
-
         //绑定框架和默认时间禁止
         document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
         window.addEventListener('load', function() {
             FastClick.attach(document.body);
         }, false);
@@ -31,6 +30,13 @@
         window.onpopstate = function(){
             _this.popPage(history.state.pageid);
         };
+
+
+        //初始化工作完成，程序入口
+        $(window).on("load",function(){
+            UiFrame.alertLast("初始化中，请稍后...");
+            NetworkModule.requestFriendsList();
+        });
 
 
 
@@ -101,8 +107,8 @@
 
     MainControl.prototype.refreshScroll=function(scrollId){
         var _this=this;
-        if(_this.iscrollWarpper.scrollId){
-
+        if(_this.iscrollWarpper[scrollId]){
+            _this.iscrollWarpper[scrollId].refresh();
         }
     };
     MainControl.prototype.attachAction=function(){
@@ -135,6 +141,24 @@
 
     //对外接口
 
+    //处理好友点击事件
+    MainControl.prototype.clickFriendItem=function(item){
+        item.css("background","#57D5C9");
+        var email=item.children(".emailHidden").text();
+        var _this=this;
+        window.setTimeout(function(){
+            if(!DataModule.hasTalking(email)){
+                DomModule.addItemToTalkingList(DataModule.getUserInfo(email));
+                DataModule.addTalkingFriend({email:email});
+            }
+            var dialog=DataModule.getUnreadMsg(email);
+            DomModule.initTalkingPage(email,dialog);
+            DomModule.resetTalkingCount({email:email});
+            item.css("background","#FFFFFF");
+            _this.pushPage('talkingPage');
+        },200)
+    };
+
     //切换tag
     MainControl.prototype.changeTag=function(tagID){
         var allWarpper=$("#mainPage .wrapper");
@@ -146,6 +170,7 @@
 
     //push页面
     MainControl.prototype.pushPage=function(pageID){
+        var _this=this;
         $(".push-page").hide();
         $("#"+pageID).show();
         window.history.pushState({'pageid':pageID},pageID,'?page='+pageID);

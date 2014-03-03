@@ -8,11 +8,12 @@
     DomModule.prototype.init=function(){
         var _this=this;
         _this.config={};
-        _this.config.baseHeadUrl=document.location.href.replace(/index\.html.*/,'')+'image/';
+        _this.config.baseHeadUrl=document.location.href.replace(/index\.html.*/,'')+'image/head/';
         _this.config.headFileType='.jpg';
         _this.domList={"friendList":$("#friendListUl"),
             "talkingList":$("#takingListUl"),
-            'sessionList':$("#sessionListUl")
+            'sessionList':$("#sessionListUl"),
+            'talkingTarget':$("#talkingTarget")
         };
         _this.listData={
             'friendListCount':1,
@@ -30,7 +31,7 @@
             'talkingList':'<li class="friendListLi">'+
                                 '<img class="headPhoto" src="{@headSrc}" />'+
                                 '<h1>{@userNick}</h1>'+
-                                '<div class="alertNumber" >1</div>'+
+                                '<div class="alertNumber hidden">0</div>'+
                                 '<div class="emailHidden">{@UserEmail}</div>'+
                           '</li>',
             'sessionList':'<li>'+
@@ -47,7 +48,7 @@
     };
     DomModule.prototype.addItemToFriendsList=function(userData){
         //将好友插入好友列表
-        //数据为数组格式 username email email
+        //数据为数组格式 username email signature
         var _this=this;
         var listUl=_this.domList.friendList;
         if(!userData.length){
@@ -62,17 +63,12 @@
             var newItem=$(itemHTML);
             //绑定事件
             newItem.on('click',function(){
-                var item=$(this);
-                item.css("background","#57D5C9");
-
-                window.setTimeout(function(){
-                    MainControl.pushPage('talkingPage');
-                    item.css("background","#FFFFFF")
-                },200)
+                MainControl.clickFriendItem($(this));
             });
             newItem.appendTo(listUl);
             _this.listData.friendListCount++;
         }
+        MainControl.refreshScroll("taking_wrapper");
     };
     DomModule.prototype.addItemToTalkingList=function(userData){
         //向列表添加项
@@ -95,11 +91,12 @@
             }
             //绑定事件
             newItem.on('click',function(){
-                $(this).css("background","#57D5C9")
+                MainControl.clickFriendItem($(this));
 
             });
             _this.listData.takingListCount++;
         }
+        MainControl.refreshScroll("friend_wrapper");
     };
     DomModule.prototype.addSentenceToSession=function(dialogData){
         //向对话列表中添加对话
@@ -120,12 +117,26 @@
             }
             newItem.appendTo(listUl);
         }
+        //位移和刷新
+        MainControl.refreshScroll("taking_wrapper");
     };
+    DomModule.prototype.initTalkingPage=function(email,dialogData){
+        //切到目标页面的dom
+        var _this=this;
+        var userInfo=DataModule.getUserInfo(email);
+        _this.domList.talkingTarget.text(userInfo.username);
+        _this.domList.sessionList.innerHTML="";
+        if(dialogData.length>0){
+            _this.addSentenceToSession(dialogData);
+        }
+
+    };
+
     DomModule.prototype.addTalkingCount=function(data){
         //增加用户的消息提示数量
         //数据为{email:...,countIndex:...}
         var _this=this;
-        var target=_this.findItemFromList(data,'takingListUl');
+        var target=_this.findItemFromList(data,'talkingList');
         var listUl=_this.domList.talkingList;
         var Num=target.children('.alertNumber');
         Num.text(Number(Num.text())+1);
@@ -136,8 +147,28 @@
         }
 
     };
+
+    DomModule.prototype.resetTalkingCount=function(data){
+        //清空用户的消息提示数量
+        //数据为{email:...,countIndex:...}
+        var _this=this;
+        var target=_this.findItemFromList(data,'talkingList');
+        var Num=target.children('.alertNumber');
+        Num.text(0);
+        if(!Num.hasClass("hidden")){
+            Num.addClass("hidden");
+        }
+    };
+    DomModule.prototype.removeFriend=function(targetEmail){
+        var _this=this;
+        _this.removeItemFromList({email:targetEmail},"friendList");
+    };
+    DomModule.prototype.removeTalking=function(targetEmail){
+        var _this=this;
+        _this.removeItemFromList({email:targetEmail},"talkingList");
+    };
     DomModule.prototype.removeItemFromList=function(data,targetList){
-        //从聊天中移除项
+        //s移除项
         //数据为{email:...,countIndex:...}
         var _this=this;
         var target=_this.findItemFromList(data,targetList);
