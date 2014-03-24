@@ -5,6 +5,8 @@ headBaseUrl="image/";
 headType=".jpg";
 var uiControl=new UiControl();
 
+
+
 //TODO 测试后删除
 var tk=new NormalSession();
 function test(){

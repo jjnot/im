@@ -154,13 +154,18 @@ MainWindowControl.prototype.friendOpenWithInformation=function(userCalled,email,
     this.talkingTarget=email;
 };
 
-MainWindowControl.prototype.groupInit=function(roomid){
+MainWindowControl.prototype.groupInit=function(roomid,selfEmail,baseUrl,headType,selfName){
+    this.selfEmail=selfEmail;
+    this.baseUrl=baseUrl;
+    this.selfName=selfName;
+    this.headType=headType;
+    this.isMouseDownOT=false;
     if(!this.groupList){
         this.groupList = new NormalSession(this.selfEmail,roomid,this.baseUrl+this.selfEmail+
             this.headType,this.selfName);
         console.log(this.groupList);
     }
-}
+};
 
 
 MainWindowControl.prototype.clickSend=function(){
@@ -168,7 +173,7 @@ MainWindowControl.prototype.clickSend=function(){
 };
 MainWindowControl.prototype.groupSend=function(){
     this.groupList.sendGroupMessageToSever();
-}
+};
 
 MainWindowControl.prototype.receiveMessage=function(email,time,message,targetSign,userCalled){
     if(this.navPos!=0){
@@ -531,16 +536,6 @@ function closeVideoChat(){
 }
 /*@测试用函数 :todo 测试完成后请删除
 ------------------------------------------------------------------------------------------------ */
-function testReceive(){
-    var inform=mainWindowControl.getInformByEmail('1234565@qq.com');
-    mainWindowControl.receiveMessage('1234565@qq.com','2013年11月15日','测试收到话语',1,111);
-}
-
-
-function testShowMessage(){
-    window.open("www.baidu.com");
-}
-
 //全局对象
 headBaseUrl="image/";
 headType=".png";
@@ -548,14 +543,11 @@ var uiControl=new UiControl();
 var netWorkModel=new NetWorkModel();
 var videoControl=new VideoControl();
 var mainWindowControl=new MainWindowControl();
-mainWindowControl.init(window.localStorage.getItem("email"),window.localStorage.getItem("username"),
-    window.localStorage.getItem("signature"),headBaseUrl,headType);
 
-
-
-//chushi
-
-window.onload=function(){
-    moveFriendListNav(1);
-};
+if(window.location.href.match("GroupTalking")){
+    mainWindowControl.groupInit(document.location.href.split('=')[1],window.localStorage.getItem("email"),headBaseUrl,headType,window.localStorage.getItem("username"));
+}else{
+    mainWindowControl.init(window.localStorage.getItem("email"),window.localStorage.getItem("username"),
+        window.localStorage.getItem("signature"),headBaseUrl,headType);
+}
 

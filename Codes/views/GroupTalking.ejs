@@ -23,7 +23,7 @@
             <div id="scrollBroad">
                 <% for(var i=0;i!=friends.length;i++){ %>
                 <div class="OneList" onmouseover="changeBackgroundBlue(this)" onmouseout="changeBackgroundWhite(this)" onclick="clickFriendList(this)">
-                    <img class="headPhoto" src="image/head.jpg">
+                    <img class="headPhoto" src="image/<%=friends[i].email%>.png">
                     <h1><%=friends[i].username%></h1>
                 </div>
                 <% } %>
@@ -40,8 +40,8 @@
 
         </div>
         <div class="talkingWindowButtom">
-            <input  id="wordInput" class="wordInput" placeholder="输入你要说的话" onkeydown="if(event.keyCode==13) sendMessage();"/>
-            <a class="roundButton whiteButton sendButton" onclick="groupSendMessage(roomid)"  >发送</a>
+            <input  id="wordInput" class="wordInput" placeholder="输入你要说的话" onkeydown="if(event.keyCode==13) groupSendMessage();"/>
+            <a class="roundButton whiteButton sendButton" onclick="groupSendMessage()"  >发送</a>
         </div>
     </div>
 
@@ -114,8 +114,6 @@
         </div>
     </div>
 </div>
-<a onclick="test()">测试</a>
-<a onclick="test2()">测试2</a>
 </body>
 <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 <script>
@@ -123,6 +121,7 @@
     var url=document.location.href.split('=');
     socket.emit('loginbygroup',{roomid:url[1],email:window.localStorage.getItem('email')});
 </script>
+
 <script type="text/javascript" src="js/NetWorkModel.js"></script>
 <script type="text/javascript" src="js/groupvideo.js"></script>
 <script type="text/javascript" src="js/VideoControl.js"></script>

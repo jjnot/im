@@ -91,7 +91,6 @@ NormalSession.prototype={
             roomid:url[1],
             name:username,
             fromemail:tempThis.selfEmail,
-            toemail:tempThis.targetEmail,
             message:catchMessage,
             time:catchTime
         },function(result){
@@ -191,7 +190,7 @@ NormalSession.prototype={
         headTd.className="headTd";
         var headImg=document.createElement("img");
         headImg.className="headPhotoforTalking";
-        headUrl=headBaseUrl+email+headType
+        headUrl=headBaseUrl+email+headType;
         headImg.src=headUrl;
         headImg.onerror=function(){
             uiControl.onHeadImgError(headImg);
@@ -222,7 +221,7 @@ NormalSession.prototype={
             $(newSession).addClass("mySession");
         }
         else{
-            headImg.src=this.targetPhoto;
+           // headImg.src=this.targetPhoto;
         }
         talkingWindowBody.appendChild(newSession);
         //让滚动条滚到底部

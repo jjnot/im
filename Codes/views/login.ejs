@@ -1,123 +1,209 @@
 
-
 <title>TM Talk —— Web IM</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel='stylesheet' href='css/login.css' type='text/css' media='all' />
-<link rel='stylesheet' href='css/colors-fresh.css' type='text/css' media='all' />
-<link rel="stylesheet" type="text/css" href="css/bm-custom-login-3.css" />
 
+<div id="wrap">
+    <div class="header">
+        <h1><strong>TM</strong>-TALK</h1>
+    </div>
+    <div class="section1">
+        <h2>Online Talk & Video</h2>
+    </div>
+    <div id="main">
+        <div class="login" id="login">
+            <form name="loginform" class="loginform" id="loginForm">
+                <div>
+                    <label for="user_login">邮箱</label>
+                    <input type="text" name="log" id="user_login" class="input" value="" size="20" tabindex="10" placeholder="请输入你的注册邮箱"/>
+                    <p class="error_info">你输入的邮箱格式有误</p>
+                </div>
+                <div>
+                    <label for="user_pass">密码</label>
+                    <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" tabindex="20" placeholder="请输入你的密码    "/>
+                    <p class="error_info">密码错误</p>
+                </div>
+                <div>
+                    <input type="submit" value="登  录">
+                </div>
+            </form>
+            <a id="go_register">新用户注册</a>
+        </div>
+
+        <div class="login hide" id="register">
+            <form name="loginform" class="loginform"  id="registerForm">
+                <div>
+                    <label for="user_register_mail">邮箱*</label>
+                    <input type="text" name="log" id="user_register_mail" class="input" value=""  placeholder="请输入你的注册邮箱"/>
+                    <p class="error_info">你输入的邮箱格式有误</p>
+                </div>
+                <div>
+                    <label for="user_register_pass">密码*</label>
+                    <input type="password" name="pwd" id="user_register_pass" class="input" value=""  placeholder="请输入你的密码    "/>
+                    <p class="error_info">密码格式错误，至少为6为字符</p>
+                </div>
+                <div>
+                    <label for="user_pass_rep">重复密码*</label>
+                    <input type="password" name="pwd" id="user_pass_rep" class="input" value=""  placeholder="请重复输入密码确认    "/>
+                    <p class="error_info">两次输入的密码不同</p>
+                </div>
+                <div>
+                    <label for="user_nick">昵称*</label>
+                    <input type="text" name="pwd" id="user_nick" class="input" value=""  placeholder="请输入你的昵称    "/>
+                    <p class="error_info">昵称不能为空</p>
+                </div>
+                <div>
+                    <label for="user_sign">个性签名</label>
+                    <textarea  name="pwd" id="user_sign" class="input" placeholder="请输入你的签名，30字以下" ></textarea>
+                    <p class="error_info">个性签名不能超过30字</p>
+                </div>
+                <div>
+                    <input type="submit" value="注   册">
+                </div>
+            </form>
+            <a id="go_login">已有账号？直接登录</a>
+        </div>
+
+    </div>
+
+
+
+</div>
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/loginCheak.js"></script>
 <script>
-    function login(){
-        console.log("login");
-        var email=$("#user_login").val();
-        var passWord=$("#user_pass").val();
-        if (cheakUP(email,passWord)){
-            $.ajax({
-                type: "POST",
-                url: "/login",
-                data:{
-                    email:email,
-                    password:passWord
-                },
-                success: function (data) {
-                    //window.localStorage.setItem("name",data.name);
-                    window.localStorage.setItem("email",email);
-                    window.localStorage.setItem("username",data.username);
-                    window.localStorage.setItem("signature",data.signature);
-                    console.log('email: '+email);
-                    console.log('username: '+data.username);
-                    window.location.href="/";
-                }
-            });
-        }
-        else{
-            document.getElementById("login_error").style.cssText = "display: block;";
-        }
-    }
-</script>
-<!-- end fbc_header -->
+    (function(window){
 
-<!-- Register button fix -->
-<div id="wrap">
-    <!-- end of Register button fix -->
-    <script type="text/javascript" src="js/dd_belated.js"></script>
-    <script src="js/dd_roundies.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            DD_roundies.addRule('#login','15px', 'true');
-            if($.browser.msie){
-                if($("#register-image").length == 0){
-                    $("#login").css("position","relative");
-                    $("#login").css("left","33%");
+        function login(){
+            var email=$("#user_login").val();
+            var passWord=$("#user_pass").val();
+            if (cheakUP(email,passWord)){
+                $.ajax({
+                    type: "POST",
+                    url: "/login",
+                    data:{
+                        email:email,
+                        password:passWord
+                    },
+                    success: function (data) {
+                        //window.localStorage.setItem("name",data.name);
+                        window.localStorage.setItem("email",email);
+                        window.localStorage.setItem("username",data.username);
+                        window.localStorage.setItem("signature",data.signature);
+                        console.log('email: '+email);
+                        console.log('username: '+data.username);
+                        window.location.href="/";
+                    }
+                });
+            }
+            else{
+                $("#loginForm").find('p').hide();
+                if(!cheakEmail(email)){
+
+                    var errorTag= $("#loginForm").find('p').eq(0);
+                    errorTag.text("邮箱格式有误");
+                    errorTag.show();
+                }else{
+                    var errorTag= $("#loginForm").find('p').eq(1);
+                    errorTag.text("密码长度过短");
+                    errorTag.show();
                 }
             }
-        });
-    </script>
-    <!--[if IE 6]>
-    <style type="text/css">
-        #login, #register-image, #backtoblog a {
-            height:1%
+            return false;
         }
-    </style>
-    <script type="text/javascript">
-        DD_belatedPNG.fix('img, #login, #register-image, #register-image img');
-        DD_roundies.addRule('#login','15px');
-    </script>
-    <![endif]-->
-    <div id="login">
-        <h1><a href="" title="Powered by HOC team"><span class="hide">Web IM</span></a></h1>
 
-        <div id="login_error" style="display: none">
-            <strong>错误</strong>: 输入的注册邮箱或密码格式有误。<br>
-        </div>
+        function submitRegister(){
+            var email=$("#user_register_mail").val();
+            var passWord=$("#user_register_pass").val();
+            var passRepeat=$("#user_pass_rep").val();
+            var nickname=$("#user_nick").val();
+            var sign=$("#user_sign").val()||"无";
+            if(checkRegisterFrom(email,passWord,passRepeat,nickname,sign)){
+                $.ajax({
+                    type: "POST",
+                    url: "/register",
+                    data:{
+                        email:email,
+                        password:passWord,
+                        username:nickname,
+                        signature:sign
+                    },
+                    success: function (data) {
+                        window.localStorage.setItem("email",email);
+                        window.localStorage.setItem("username",data.username);
+                        window.localStorage.setItem("signature",data.signature);
+                        window.location.href="/";
+                    },
+                    error:function(){
+                        //todo 添加注册失败处理
+                    }
+                });
+            }
+            return false;
+        }
 
-        <form name="loginform" id="loginform">
-            <p>
-                <label>邮箱<br />
-                    <input type="text" name="log" id="user_login" class="input" value="" size="20" tabindex="10" /></label>
-            </p>
-            <p>
-                <label>密码<br />
-                    <input type="password" name="pwd" id="user_pass" class="input" value="" size="20" tabindex="20" /></label>
-            </p>
-            <div class="dark">
-                <fb:login-button size="large" background="dark" length="long"  onlogin="FBConnect.redirect_home()" >
-                </fb:login-button>
-            </div>
-             <!--  <p class="forgetmenot"><label><input name="rememberme" type="checkbox" id="rememberme" value="forever" tabindex="90" /> Remember Me</label></p> -->
-            <p id="nav"></p>
-            <p class="submit">
-                <input type="button" onclick="javascript:login()" name="wp-submit" id="wp-submit" value="登陆" tabindex="100"/>
-                <input type="hidden" name="redirect_to" value="" />
-                <input type="hidden" name="testcookie" value="1" />
-            </p>
-        </form>
+        function checkRegisterFrom(email,passWord,passRepeat,nickname,sign){
+            //隐藏所有提示
+            var alerts=$("#registerForm").find("p");
+            alerts.hide();
+            formOk=true;
+            if(!cheakEmail(email)){
+                alerts.eq(0).html("邮箱格式不正确");
+                alerts.eq(0).show();
+                formOk=false;
+            }
+            if(passWord.length<6){
+                alerts.eq(1).html("密码不能小于六位");
+                alerts.eq(1).show();
+                formOk=false;
+            }
+            if(!cheakPassSame(passWord,passRepeat)){
+                alerts.eq(2).html("两次输入的密码不一致");
+                alerts.eq(2).show();
+                formOk=false;
+            }
+            if(!cheakNull(nickname)){
+                alerts.eq(3).html("昵称不能为空");
+                alerts.eq(3).show();
+                formOk=false;
+            }
+            if(sign.length>30){
+                alerts.eq(4).html("签名长度不能大于30个字符");
+                alerts.eq(4).show();
+                formOk=false;
+            }
+            return formOk;
 
 
-        <p id="nav">
-            <!--<a href="" title="Password Lost and Found">Lost your password?</a>-->
-         </p>
+        }
 
-    </div>
 
-    <!-- Register button fix -->
-    <div id="register-image">
-        <a href="register"><img src="image/register-now.png" alt="Register with Ooizit!"/></a>
-        <p>立即注册，享受TM Talk，随时随地，web视频群聊！</p>
-    </div>
+        function attachAction(){
+            $("#go_register").on('click',function(){
+                $("#login").addClass("hide");
+                $("#register").removeClass("hide");
 
-</div>
-<!-- end of Register Fix -->
+            });
+            $("#go_login").on('click',function(){
+                $("#register").addClass("hide");
 
-<p id="backtoblog"><a href="" title="Are you lost?"> 欢迎来到 TM Talk ！</a></p>
+                $("#login").removeClass("hide");
 
-<script type="text/javascript">
-    try{document.getElementById('user_login').focus();}catch(e){}
+            });
+
+            $("#loginForm").on("submit",function(){
+                return login();
+            })
+            $("#registerForm").on("submit",function(){
+                return submitRegister();
+            })
+        }
+        window.onload=function(){
+            attachAction();
+        }
+
+    })(window);
 </script>
-
-
 
 
 </body>
