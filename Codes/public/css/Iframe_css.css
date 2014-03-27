@@ -185,6 +185,22 @@
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
 }
 
+.redButton{
+    color: #FFFFFF;
+    border: solid 1px #970000;
+    background: #FF6F6F;
+    background: -webkit-gradient(linear, left top, left bottom, from(#FF6F6F), to(#D13838));
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF6F6F', endColorstr='#D13838');
+}
+
+.redButton:hover{
+    color: #FFFFFF;
+    border: solid 1px #970000;
+    background: #691E1E;
+    background: -webkit-gradient(linear, left top, left bottom, from(#FF6F6F), to(#691E1E));
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF6F6F', endColorstr='#691E1E');
+}
+
 .talkingWindowHeader{
     cursor:move;
     border-radius: 10px 10px 0 0;

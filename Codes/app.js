@@ -31,7 +31,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
 app.use(express.logger('dev'));
-app.use(express.bodyParser({ keepExtensions: true, uploadDir: './Codes/public/image' }));
+app.use(express.bodyParser({ keepExtensions: true, uploadDir: './public/image' }));
 app.use(express.methodOverride());
 app.use(express.cookieParser('my secret string'));
 app.use(express.session());
@@ -281,7 +281,7 @@ app.get('/GroupTalking',GroupTalking);
 //获取个人信息 {youremail:xxxx}
 app.get('/getinfo/:email',routes.getPersonalInfo);
 app.post('/login',routes.login,addsession);
-app.post('/register',routes.register,addsession);
+app.post('/register',routes.register,usercontrol.copyDefaultHead,addsession);
 app.post('/addfriend',addFriend_control);
 app.post('/deletefriend',deleteFriend_control);
 app.post('/getOnlineList',getOnlinelist_control);

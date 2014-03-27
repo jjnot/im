@@ -29,7 +29,7 @@
                 <!--好友列表-->
                 <% for(var i=0;i!=friends.length;i++){ %>
                 <div class="OneList" onmouseover="changeBackgroundBlue(this)" onmouseout="changeBackgroundWhite(this)" onclick="clickFriendList(this)">
-                    <img class="headPhoto" src="image/head.jpg">
+                    <img class="headPhoto" src="image/<%=friends[i].email%>.png">
                     <h1><%=friends[i].username%></h1>
                     <div class="deleteIcon" onclick="clickDeleteFriend(this)"></div>
                     <div class="emailHidden"><%=friends[i].email%></div>
@@ -57,6 +57,7 @@
                     <input type="file" id="upload" name="upload" onchange="selectFile(this)">
                     <input type="submit" class="roundButton whiteButton saveButton" value="修改头像" >
                 </form>
+                <button class="roundButton redButton saveButton"  onclick="exit()">退出登录</button>
             </div>
         </div>
 

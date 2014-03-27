@@ -534,6 +534,12 @@ function closeVideoChat(){
     $("#videoWrapper").fadeOut(200);
     socket.emit('videoclose',1);
 }
+
+function exit(){
+    window.localStorage.clear();
+    window.location.reload();
+    //todo POST请求退出登录
+}
 /*@测试用函数 :todo 测试完成后请删除
 ------------------------------------------------------------------------------------------------ */
 //全局对象
@@ -550,4 +556,6 @@ if(window.location.href.match("GroupTalking")){
     mainWindowControl.init(window.localStorage.getItem("email"),window.localStorage.getItem("username"),
         window.localStorage.getItem("signature"),headBaseUrl,headType);
 }
+
+
 

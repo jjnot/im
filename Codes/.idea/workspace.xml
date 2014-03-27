@@ -26,7 +26,7 @@
       <file leaf-file-name="login.ejs" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/login.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="21" selection-start="2535" selection-end="2535" vertical-scroll-proportion="-18.981482" vertical-offset="55" max-vertical-offset="4320">
+            <state line="54" column="21" selection-start="2535" selection-end="2535" vertical-scroll-proportion="-35.344826" vertical-offset="55" max-vertical-offset="4320">
               <folding />
             </state>
           </provider>
@@ -35,30 +35,38 @@
       <file leaf-file-name="frame.ejs" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/frame.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="244" column="0" selection-start="7569" selection-end="7569" vertical-scroll-proportion="-24.241379" vertical-offset="4177" max-vertical-offset="5440">
+            <state line="59" column="79" selection-start="2798" selection-end="2802" vertical-scroll-proportion="-8.685185" vertical-offset="711" max-vertical-offset="5460">
               <folding>
-                <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1395905073162" expanded="true" signature="1252:1816" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GroupTalking.ejs" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Iframe_css.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/Iframe_css.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="198" column="16" selection-start="3779" selection-end="3779" vertical-scroll-proportion="0.0" vertical-offset="3333" max-vertical-offset="10860">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroupTalking.ejs" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/GroupTalking.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="79" selection-start="994" selection-end="994" vertical-scroll-proportion="0.55904526" vertical-offset="55" max-vertical-offset="2960">
+            <state line="29" column="18" selection-start="1116" selection-end="1116" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="2960">
               <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1395903962003" expanded="true" signature="758:1094" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainWindowControl.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="mainWindowControl.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/mainWindowControl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="451" column="9" selection-start="13839" selection-end="13839" vertical-scroll-proportion="-11.0" vertical-offset="8745" max-vertical-offset="11180">
+            <state line="540" column="21" selection-start="15548" selection-end="15548" vertical-scroll-proportion="0.42062572" vertical-offset="10437" max-vertical-offset="11340">
               <folding />
             </state>
           </provider>
@@ -67,7 +75,16 @@
       <file leaf-file-name="TalkingClass.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/TalkingClass.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="223" column="13" selection-start="7565" selection-end="7565" vertical-scroll-proportion="-27.96" vertical-offset="3761" max-vertical-offset="5020">
+            <state line="223" column="13" selection-start="7565" selection-end="7565" vertical-scroll-proportion="0.0" vertical-offset="3761" max-vertical-offset="5020">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="283" column="53" selection-start="9019" selection-end="9019" vertical-scroll-proportion="55.8" vertical-offset="7055" max-vertical-offset="8480">
               <folding />
             </state>
           </provider>
@@ -85,7 +102,7 @@
       <file leaf-file-name="login.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/login.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="202" selection-start="869" selection-end="890" vertical-scroll-proportion="-6.4" vertical-offset="0" max-vertical-offset="580">
+            <state line="8" column="202" selection-start="869" selection-end="890" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="580">
               <folding />
             </state>
           </provider>
@@ -101,21 +118,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/models/chatRec.js" />
         <option value="$PROJECT_DIR$/models/textModel.js" />
         <option value="$PROJECT_DIR$/routes/textControl.js" />
         <option value="$PROJECT_DIR$/models/text.js" />
         <option value="$PROJECT_DIR$/routes/textModel.js" />
         <option value="$PROJECT_DIR$/routes/grouptext.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/fc88test.js" />
         <option value="$PROJECT_DIR$/public/css/login.css" />
-        <option value="$PROJECT_DIR$/views/frame.ejs" />
         <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/public/js/initGroup.js" />
-        <option value="$PROJECT_DIR$/public/js/mainWindowControl.js" />
         <option value="$PROJECT_DIR$/public/js/TalkingClass.js" />
         <option value="$PROJECT_DIR$/views/GroupTalking.ejs" />
+        <option value="$PROJECT_DIR$/public/css/Iframe_css.css" />
+        <option value="$PROJECT_DIR$/views/frame.ejs" />
+        <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/routes/usercontrol.js" />
+        <option value="$PROJECT_DIR$/public/js/mainWindowControl.js" />
       </list>
     </option>
   </component>
@@ -151,6 +169,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -245,19 +264,18 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../im2/Codes" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -265,14 +283,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Node.js.Unnamed">
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
-      <option name="VMOptions" />
-      <option name="arguments" />
-      <option name="filePath" />
-      <option name="scope" value="ALL" />
-      <option name="testName" />
-      <method />
-    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -283,15 +293,23 @@
       <option name="showConsoleOnStdOut" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
       <setting name="configLocationType" value="CONFIG_FILE" />
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="CHROME" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" singleton="true" config-file="">
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
@@ -347,7 +365,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1672619" sideWeight="0.6719101" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1672619" sideWeight="0.6719101" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280899" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -376,20 +394,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="863">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="5" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/reg.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1640">
@@ -404,26 +408,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="255" column="9" selection-start="8172" selection-end="8172" vertical-scroll-proportion="3.7392817" vertical-offset="1873" max-vertical-offset="8480">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/register.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="37" selection-start="8622" selection-end="8630" vertical-scroll-proportion="0.7563946" vertical-offset="3059" max-vertical-offset="4720">
-          <folding>
-            <marker date="1387246700705" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1387246700705" expanded="true" signature="-1:-1" placeholder="{&quot;icons_path&quot;: &quot;images/icons/&quot;...}" />
-          </folding>
-        </state>
+        <state line="184" column="37" selection-start="8622" selection-end="8630" vertical-scroll-proportion="0.7563946" vertical-offset="3059" max-vertical-offset="4720" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/login.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="202" selection-start="869" selection-end="890" vertical-scroll-proportion="-6.4" vertical-offset="0" max-vertical-offset="580">
+        <state line="8" column="202" selection-start="869" selection-end="890" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="580">
           <folding />
         </state>
       </provider>
@@ -449,18 +441,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/frame.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="244" column="0" selection-start="7569" selection-end="7569" vertical-scroll-proportion="-24.241379" vertical-offset="4177" max-vertical-offset="5440">
-          <folding>
-            <element signature="n#style#0;n#iframe#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/TalkingClass.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="223" column="13" selection-start="7565" selection-end="7565" vertical-scroll-proportion="-27.96" vertical-offset="3761" max-vertical-offset="5020">
+        <state line="223" column="13" selection-start="7565" selection-end="7565" vertical-scroll-proportion="0.0" vertical-offset="3761" max-vertical-offset="5020">
           <folding />
         </state>
       </provider>
@@ -472,27 +455,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/mainWindowControl.js">
+    <entry file="file://$PROJECT_DIR$/views/GroupTalking.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="451" column="9" selection-start="13839" selection-end="13839" vertical-scroll-proportion="-11.0" vertical-offset="8745" max-vertical-offset="11180">
-          <folding />
+        <state line="29" column="18" selection-start="1116" selection-end="1116" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="2960">
+          <folding>
+            <marker date="1395903962003" expanded="true" signature="758:1094" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/login.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="21" selection-start="2535" selection-end="2535" vertical-scroll-proportion="-18.981482" vertical-offset="55" max-vertical-offset="4320">
+        <state line="54" column="21" selection-start="2535" selection-end="2535" vertical-scroll-proportion="-35.344826" vertical-offset="55" max-vertical-offset="4320">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/GroupTalking.ejs">
+    <entry file="file://$PROJECT_DIR$/public/css/Iframe_css.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="79" selection-start="994" selection-end="994" vertical-scroll-proportion="0.55904526" vertical-offset="55" max-vertical-offset="2960">
+        <state line="198" column="16" selection-start="3779" selection-end="3779" vertical-scroll-proportion="0.0" vertical-offset="3333" max-vertical-offset="10860">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/frame.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="79" selection-start="2798" selection-end="2802" vertical-scroll-proportion="-8.685185" vertical-offset="711" max-vertical-offset="5460">
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1395905073162" expanded="true" signature="1252:1816" placeholder="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/usercontrol.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="0" selection-start="833" selection-end="1280" vertical-scroll-proportion="0.33256084" vertical-offset="253" max-vertical-offset="1820">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="283" column="53" selection-start="9019" selection-end="9019" vertical-scroll-proportion="55.8" vertical-offset="7055" max-vertical-offset="8480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/mainWindowControl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="540" column="21" selection-start="15548" selection-end="15548" vertical-scroll-proportion="0.42062572" vertical-offset="10437" max-vertical-offset="11340">
+          <folding />
         </state>
       </provider>
     </entry>

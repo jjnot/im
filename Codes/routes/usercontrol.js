@@ -25,6 +25,21 @@ exports.notifyFriends=function(email,userlist){
     }
 }
 
+exports.copyDefaultHead=function(req,res,next){
+    var mFs = require('fs');
+    var readStream = mFs.createReadStream('./public/image/head.jpg');
+    var writeStream = mFs.createWriteStream('./public/image/'+req.body.email+'.png');
+    readStream.pipe(writeStream);
+    readStream.on('end', function () {
+        console.log('copy end');
+    });
+    readStream.on('error', function () {
+        console.log('copy error');
+    });
+    next();
+
+};
+
 //上传头像
 exports.uploadHead=function(req,res){
     console.log('aaaaaaaaaa');
@@ -35,11 +50,11 @@ exports.uploadHead=function(req,res){
     if(array[1]=="png"||array[1]=="jpg"||array[1]=="bmp"){
         var arr=req.session.email.split('.');
 
-        var s='./Codes/public/image/'+arr[0];
+        var s='./public/image/'+arr[0];
         console.log(s);
           fs.readFile(s,function(err){
               fs.unlink(s,function(err){
-                  fs.rename(tmp,'Codes/public/image/'+req.session.email+'.png',function(err){
+                  fs.rename(tmp,'./public/image/'+req.session.email+'.png',function(err){
                       res.send(200);
 
               })
